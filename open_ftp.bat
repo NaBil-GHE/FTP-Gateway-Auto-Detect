@@ -49,7 +49,7 @@ echo ================================================
 REM Set the FTP port
 set ftpport=2221
 
-REM Build the FTP URL (without port for Explorer compatibility)
+REM Build the FTP URL with the specified port
 set ftpaddress=ftp://%gateway%:%ftpport%/
 
 echo Opening %ftpaddress% in Explorer...
@@ -59,6 +59,7 @@ explorer.exe "%ftpaddress%"
 
 timeout /t 2 >nul
 
-REM Note: Windows Explorer doesn't support custom FTP ports
-REM If you need port 2221, the FTP server must be configured on standard port 21
+REM Note: Windows Explorer has limited support for custom FTP ports.
+REM If connection fails, try using a web browser or dedicated FTP client.
+REM For best compatibility, configure your FTP server to use standard port 21.
 
